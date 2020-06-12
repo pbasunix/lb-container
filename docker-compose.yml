@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  loadbalancer:
+    build:
+      context: .
+      dockerfile: Dockerfile.html5up-nginx
+    restart: always
+    ports:
+      - "8080:80"
+
+  multiverse:
+    build:
+      context: .
+      dockerfile: Dockerfile.html5up-multiverse
+    restart: always
+
+  parallelism:
+    build:
+      context: .
+      dockerfile: Dockerfile.html5up-parallelism 
+    restart: always
+      
+  phantom:
+   build:
+     context: .
+     dockerfile: Dockerfile.html5up-phantom
+   restart: always
